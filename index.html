@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K.D.V. - Официальный сайт</title>
+    <title>KDV - Официальный сайт</title>
     <style>
         /* Базовые стили */
         * {
@@ -99,11 +99,19 @@
             background: #252525;
             border-radius: 10px;
             overflow: hidden;
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            position: relative;
         }
         
         .album-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 85, 0, 0.3);
+        }
+        
+        .album-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
         }
         
         .album-img {
@@ -146,6 +154,8 @@
             border-radius: 5px;
             font-weight: bold;
             transition: all 0.3s;
+            border: none;
+            cursor: pointer;
         }
         
         .btn:hover {
@@ -170,7 +180,7 @@
     <header>
         <div class="container">
             <div class="header-inner">
-                <a href="#" class="logo">K.D.V.</a>
+                <a href="#" class="logo">KDV</a>
             </div>
         </div>
     </header>
@@ -179,7 +189,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>K.D.V. MUSIC</h1>
+                <h1>KDV MUSIC</h1>
                 <p>Официальный сайт музыканта</p>
             </div>
         </div>
@@ -192,17 +202,19 @@
             
             <div class="album-grid">
                 <!-- Альбом "Парадигма" -->
-                <div class="album-card">
-                    <div class="album-img">
-                        <img src="https://avatars.yandex.net/get-music-content/14854709/8548734c.a.36107387-1/600x600" alt="Парадигма">
+                <a href="https://music.yandex.ru/album/36107387" class="album-link" target="_blank">
+                    <div class="album-card">
+                        <div class="album-img">
+                            <img src="https://avatars.yandex.net/get-music-content/14854709/8548734c.a.36107387-1/600x600" alt="Парадигма">
+                        </div>
+                        <div class="album-info">
+                            <h3 class="album-title">Парадигма</h3>
+                            <div class="album-year">2023</div>
+                            <button class="btn">Слушать</button>
+                        </div>
                     </div>
-                    <div class="album-info">
-                        <h3 class="album-title">Парадигма</h3>
-                        <div class="album-year">2025</div>
-                        <a href="https://music.yandex.ru/album/36107387" class="btn" target="_blank">Слушать</a>
-                    </div>
-                </div>
-                <div class="album-card">
+                </a>
+                 <div class="album-card">
     <div class="album-img">
         <img src="https://avatars.yandex.net/get-music-content/14183125/8f4a33f6.a.35084653-1/600x600" alt="Название альбома">
     </div>
@@ -220,8 +232,21 @@
     <!-- Подвал -->
     <footer>
         <div class="container">
-            <p class="copyright">© 2025 K.D.V. Music. Все права защищены.</p>
+            <p class="copyright">© 2023 KDV Music. Все права защищены.</p>
         </div>
     </footer>
+
+    <script>
+        // Делаем всю карточку кликабельной
+        document.querySelectorAll('.album-card').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function(e) {
+                // Проверяем, не было ли клика по кнопке
+                if (e.target.tagName !== 'BUTTON') {
+                    window.open(this.closest('a').href, '_blank');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
