@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K.D.V. - Официальный сайт</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>KDV - Официальный сайт</title>
     <style>
-        /* Сброс стилей и базовые настройки */
+        /* Базовые стили */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
         
         body {
-            background-color: #0a0a0a;
-            color: #fff;
+            background-color: #121212;
+            color: #ffffff;
             line-height: 1.6;
-            overflow-x: hidden;
         }
         
         .container {
@@ -29,13 +27,12 @@
         
         /* Шапка сайта */
         header {
-            background: rgba(10, 10, 10, 0.9);
+            background-color: #000000;
             padding: 20px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #c6a777;
         }
         
         .header-inner {
@@ -46,60 +43,20 @@
         
         .logo {
             font-size: 28px;
-            font-weight: 700;
-            color: #c6a777;
+            font-weight: bold;
+            color: #ff5500;
             text-decoration: none;
-            letter-spacing: 1px;
         }
         
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-menu li {
-            margin-left: 30px;
-        }
-        
-        .nav-menu a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-            position: relative;
-        }
-        
-        .nav-menu a:hover {
-            color: #c6a777;
-        }
-        
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #c6a777;
-            transition: width 0.3s;
-        }
-        
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-        
-        /* Герой-секция */
+        /* Главный экран */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3') center/cover;
+                        url('https://avatars.yandex.net/get-music-content/15018579/23ce9d84.p.3530293/m1000x1000') center/cover;
             display: flex;
             align-items: center;
             text-align: center;
-            margin-top: 80px;
+            margin-top: 60px;
         }
         
         .hero-content {
@@ -108,75 +65,41 @@
         }
         
         .hero h1 {
-            font-size: 4.5rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #c6a777;
-            text-shadow: 0 0 10px rgba(198, 167, 119, 0.5);
+            color: #ffffff;
         }
         
         .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #cccccc;
         }
         
-        .btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: #c6a777;
-            color: #000;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 2px;
-            border-radius: 0;
-            transition: all 0.3s;
-            border: 2px solid #c6a777;
-        }
-        
-        .btn:hover {
-            background: transparent;
-            color: #c6a777;
-        }
-        
-        /* Секция альбомов */
+        /* Альбомы */
         .albums {
-            padding: 100px 0;
-            background: #121212;
+            padding: 80px 0;
+            background-color: #1a1a1a;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
-            position: relative;
+            margin-bottom: 50px;
             font-size: 2.5rem;
-            text-transform: uppercase;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: #c6a777;
+            color: #ff5500;
         }
         
         .album-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
         
         .album-card {
-            background: #1a1a1a;
+            background: #252525;
+            border-radius: 10px;
             overflow: hidden;
             transition: transform 0.3s;
-            position: relative;
-            border: 1px solid #2a2a2a;
         }
         
         .album-card:hover {
@@ -184,14 +107,19 @@
         }
         
         .album-img {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .album-img img {
             width: 100%;
-            height: 280px;
-            background: #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #c6a777;
-            font-size: 5rem;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .album-card:hover .album-img img {
+            transform: scale(1.1);
         }
         
         .album-info {
@@ -199,151 +127,41 @@
         }
         
         .album-title {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 10px;
-            color: #c6a777;
+            color: #ffffff;
         }
         
         .album-year {
-            color: #aaa;
+            color: #aaaaaa;
             margin-bottom: 15px;
         }
         
-        /* Секция концертов */
-        .tours {
-            padding: 100px 0;
-            background: #0a0a0a;
-        }
-        
-        .tour-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .tour-table th {
-            background: #c6a777;
-            color: #000;
-            padding: 15px;
-            text-align: left;
-            text-transform: uppercase;
-        }
-        
-        .tour-table td {
-            padding: 15px;
-            border-bottom: 1px solid #2a2a2a;
-        }
-        
-        .tour-table tr:hover {
-            background: rgba(198, 167, 119, 0.1);
-        }
-        
-        .tour-btn {
-            padding: 8px 20px;
-            background: #c6a777;
-            color: #000;
-            border: none;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .tour-btn:hover {
-            background: #b89a65;
-        }
-        
-        /* Футер */
-        footer {
-            background: #000;
-            padding: 60px 0 30px;
-            border-top: 1px solid #c6a777;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-logo {
-            font-size: 2rem;
-            color: #c6a777;
-            margin-bottom: 20px;
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background: #222;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #c6a777;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-        }
-        
-        .social-icon:hover {
-            background: #c6a777;
-            color: #000;
-            transform: translateY(-5px);
-        }
-        
-        .footer-title {
-            font-size: 1.3rem;
-            color: #c6a777;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #aaa;
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #ff5500;
+            color: #000000;
             text-decoration: none;
-            transition: color 0.3s;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
         }
         
-        .footer-links a:hover {
-            color: #c6a777;
+        .btn:hover {
+            background-color: #ff7733;
+            color: #000000;
+        }
+        
+        /* Подвал */
+        footer {
+            background-color: #000000;
+            padding: 40px 0;
+            text-align: center;
         }
         
         .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #222;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        /* Медиа-запросы */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .nav-menu {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-                color: #fff;
-                font-size: 1.5rem;
-            }
+            color: #666666;
         }
     </style>
 </head>
@@ -352,155 +170,49 @@
     <header>
         <div class="container">
             <div class="header-inner">
-                <a href="#" class="logo">K.D.V.</a>
-                
-                <ul class="nav-menu">
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">Новости</a></li>
-                    <li><a href="#">Музыка</a></li>
-                    <li><a href="#">Видео</a></li>
-                   
-                    <li><a href="#">Магазин</a></li>
-                    <li><a href="#">Контакты</a></li>
-                </ul>
+                <a href="#" class="logo">KDV</a>
             </div>
         </div>
     </header>
 
-    <!-- Герой-секция -->
+    <!-- Главный экран -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Дмитрий Колганов</h1>
-                <p>Официальный сайт легенды разноплановой музыки</p>
-                <a href="#" class="btn">Слушать музыку</a>
+                <h1>KDV MUSIC</h1>
+                <p>Официальный сайт музыканта</p>
             </div>
         </div>
     </section>
 
-    <!-- Секция альбомов -->
+    <!-- Альбомы -->
     <section class="albums">
         <div class="container">
             <h2 class="section-title">Альбомы</h2>
             
             <div class="album-grid">
-                <div class="album-card">
-                    <div class="https://avatars.yandex.net/get-music-content/14854709/8548734c.a.36107387-1/600x600">
-                        <i class="fas fa-compact-disc"></i>
-                    </div>
-                    <div class="album-info">
-                        <h3 class="album-title">01:23</h3>
-                        <div class="album-year">2025</div>
-                        <a https://music.yandex.ru/album/35084653 class="btn">Слушать</a>
-                    </div>
-                </div>
-                
+                <!-- Альбом "Парадигма" -->
                 <div class="album-card">
                     <div class="album-img">
-                        <i class="fas fa-compact-disc"></i>
+                        <img src="https://avatars.yandex.net/get-music-content/14854709/8548734c.a.36107387-1/600x600" alt="Парадигма">
                     </div>
                     <div class="album-info">
                         <h3 class="album-title">Парадигма</h3>
-                        <div class="album-year">2025</div>
-                        <a https://music.yandex.ru/album/36107387 class="btn">Слушать</a>
+                        <div class="album-year">2023</div>
+                        <a href="https://music.yandex.ru/album/36107387" class="btn" target="_blank">Слушать</a>
                     </div>
                 </div>
                 
-                <div class="album-card">
-                    <div class="album-img">
-                        <i class="fas fa-compact-disc"></i>
-                    </div>
-                    <div class="album-info">
-                        <h3 class="album-title">Фентази</h3>
-                        <div class="album-year">202?</div>
-                        <a href="#" class="btn">Слушать</a>
-                    </div>
-                </div>
-                
-                <div class="album-card">
-                    <div class="album-img">
-                        <i class="fas fa-compact-disc"></i>
-                    </div>
-                    <div class="album-info">
-                        <h3 class="album-title">?????</h3>
-                        <div class="album-year">202?</div>
-                        <a href="#" class="btn">Слушать</a> 
-                    </div>
-                </div>
+                <!-- Здесь можно добавить другие альбомы -->
             </div>
-        </div>
-    </section>
-
-    <!-- Секция концертов -->
-    <section class="tours">
-        <div class="container">
-            <h2 class="section-title">Пожертвование на альбомы</h2>
-            
-            <table class="tour-table">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>НАЗВАНИЕ</th>
-                        <th></th>
-                        <th>СПАНСИРОВАТЬ</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td> </td>
-                        <td>Фентези</td>
-                        <td> </td>
-                        <td> <button class="tour-btn">ПОЖЕРТВОВАТЬ</button></td>
-                    </tr>
-                    <tr>
-                        <td> </td>
-                        <td>Социальные</td>
-                        <td> </td>
-                        <td> <button class="tour-btn">ПОЖЕРТВОВАТЬ</button></td>
-                    </tr>
-                    <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> <button class="tour-btn">ПОЖЕРТВОВАТЬ</button></td>
-                    </tr>
-                    <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> <button class="tour-btn">ПОЖЕРТВОВАТЬ</button></td>
-                    </tr>
-                    <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td><button class="tour-btn">ПОЖЕРТВОВАТЬ</button></td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
     </section>
 
     <!-- Подвал -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <div class="footer-logo">K.D.V.</div>
-                    <p>Официальный сайт Дмитрия Колганова - легенды разноплановой музыки .</p>
-                    
-                    <div class="footer-social">
-                        <a https://vk.com/club228924481?from=groups class="social-icon"><i class="fab fa-vk"></i></a>
-                        <a https://www.youtube.com/@v.K.D.V.v class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a https://t.me/DyomaKDV class="social-icon"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h3 class="footer-title">Навигация</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Главная</a></li>
-                        <li><a href="#">Биография</a></li>
-                        <li><a href="#">Дискография</a></li>
-                        <li><a href
+            <p class="copyright">© 2023 KDV Music. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
